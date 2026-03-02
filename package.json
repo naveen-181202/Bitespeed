@@ -1,0 +1,28 @@
+{
+  "name": "bitespeed",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "nodemon --watch src --exec ts-node src/index.ts",
+    "build": "npm install && npx prisma generate && npx prisma db push && npx tsc",
+    "start": "node dist/index.js",
+    "postinstall": "npx prisma generate",
+    "prisma:migrate": "npx prisma db push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Bitespeed identity reconciliation backend task",
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.3.3",
+    "@prisma/client": "^6.19.2",
+    "express": "^5.2.1",
+    "prisma": "^6.19.2",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "ts-node": "^10.9.2"
+  }
+}
